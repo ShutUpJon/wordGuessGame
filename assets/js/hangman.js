@@ -1,25 +1,27 @@
-// GLobal Variables //
-// ========================================================= //
 // Create an Array of Words //
 const word = ['blue', 'orange', 'red', 'pink', 'black', 'grey', 'white'];
 // Choose Word Randomly //
-let randNum = Math.floor(Math.random() *word.length);
-let choosenWord = word[randNum];
-let rightWord = [];
-let wrongWord = [];
-let underScore = [];
+var randNum = Math.floor(Math.random() *word.length);
+var choosenWord = word[randNum];
+var numBlanks = [];
+var rightWord = [];
+var wrongWord = [];
+var underScore = [];
 
 // Underscores Manipulation /
-let docUnderScore = document.getElementsByClassName('underscore');
-let docRightGuess = document.getElementsByClassName('rightGuess');
-let docWrongGuess = document.getElementsByClassName('wrongGuess');
+var docUnderScore = document.getElementsByClassName('underscore');
+var docRightGuess = document.getElementsByClassName('rightGuess');
+var docWrongGuess = document.getElementsByClassName('wrongGuess');
 
 
 // Main //
 // ========================================================== //
 // Create underscores based on length of word //
-let generateUnderscore = () => {
-    for(let i = 0; i < choosenWord.length; i++) {
+
+
+
+var generateUnderscore = () => {
+    for(var i = 0; i < choosenWord.length; i++) {
         underScore.push('_');
         docUnderScore[0].innerHTML = underScore.join(' ');
         docRightGuess[0].innerHTML = rightGuess.join('');
@@ -27,9 +29,9 @@ let generateUnderscore = () => {
     return underScore;
 }
 
-// Get users guess //
+// Get users guess // 
 document.addEventListener('keypress', (event) => {
-    let keyword = String.fromCharCode(event.keyCode);
+    var keyword = String.fromCharCode(event.keyCode);
 // if Users Guess is right 
     if(choosenWord.indexOf(keyword) > -1) {
     // add to right words array //
@@ -54,7 +56,3 @@ document.addEventListener('keypress', (event) => {
         
 });
 
-
-
-// If right push to right array //
-// If wrong push to wrong array //
